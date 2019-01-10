@@ -1,0 +1,99 @@
+//
+//  A L E R T
+//
+//  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+.alert-box {
+  position: relative;
+  padding: $vr $vr*2;
+  max-height: 20rem;
+  margin-top: $vr*2;
+
+  transition: max-height $anim $anim-duration*0.5, padding $anim $anim-duration*0.5, margin $anim $anim-duration*0.5;
+
+  //  Colors
+  //  ───────────────────────────────────
+  /*---
+  title:   Alert
+  name:    alert
+  ---
+
+  Alert can have different colors:
+
+  ```example:html
+  <div class="alert-box success">
+    <p class="no-margin">This is a success alert</p>
+    <a href="#x" class="alert-box--close"><svg class="icon small black"><use xlink:href="#icon-close" /></svg></a>
+  </div>
+  <div class="alert-box warning">
+    <p class="no-margin">This is a warning alert</p>
+    <a href="#x" class="alert-box--close"><svg class="icon small gray-darker"><use xlink:href="#icon-close" /></svg></a>
+  </div>
+  <div class="alert-box info">
+    <p class="no-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <a href="#x" class="alert-box--close"><svg class="icon small white"><use xlink:href="#icon-close" /></svg></a>
+  </div>
+  <div class="alert-box alert">
+    <p class="no-margin">This is an alert alert ¯\_(ツ)_/¯</p>
+    <a href="#x" class="alert-box--close"><svg class="icon small white"><use xlink:href="#icon-close" /></svg></a>
+  </div>
+  ```
+  */
+  &.success {
+    background: clr(yellow);
+    color: clr(black);
+  }
+
+  &.warning {
+    background: clr(warning);
+    color: clr(black);
+  }
+
+  &.info {
+    background: clr(info);
+    color: clr(white);
+  }
+
+  &.alert {
+    background: clr(black);
+    color: clr(white);
+  }
+
+  .alert-box--close {
+    position: absolute;
+    width: $vr*3;
+    height: $vr*3;
+    top: $vr;
+    right: $vr;
+    background-color: clr(white);
+    cursor: pointer;
+    background-image: svg-inline(cross);
+    background-repeat: no-repeat;
+    background-size: $vr*2;
+    background-position: 50% 50%;
+    border-radius: 50%;
+    transition: opacity $anim,
+      box-shadow $anim;
+
+    &:hover {
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  >* {
+    transition: opacity $anim;
+    transition-delay: $anim-duration/2;
+  }
+
+  &.remove {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 $vr*2;
+    margin-top: 0;
+
+    >* {
+      opacity: 0;
+    }
+  }
+}

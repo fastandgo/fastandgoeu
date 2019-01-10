@@ -1,0 +1,582 @@
+//
+//  F O R M
+//
+//  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+label {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    font-weight: 400;
+    color: #676767;
+  }
+
+  &>input,
+  &>select,
+  &>textarea {
+    width: 100%;
+    margin-top: $vr;
+  }
+
+  &.error {
+    color: clr(alert);
+
+    &:after {
+      content: attr(data-error);
+      position: relative;
+      background: clr(alert);
+      color: clr(white);
+      font-size: 1.2rem;
+      line-height: 1.3rem;
+      padding: 1.2rem 2.2rem;
+    }
+
+    &>input,
+    &>select,
+    &>textarea {
+      border-color: clr(alert);
+      margin-bottom: $vr/2;
+    }
+  }
+
+  abbr {
+    display: none;
+  }
+}
+
+/*---
+title:   Input
+name:    form-Input
+order: 2
+section: Form
+---
+
+```example:html
+<label for="input-error" class="error" data-error="Error message">
+  Input label
+  <input type="text" name="input" value="Content added" id="input-error">
+</label>
+<label for="input">
+  Input label
+  <input type="text" name="input" value="" id="input" placeholder="Input placeholder">
+</label>
+<label for="input-value">
+  Input label
+  <input type="text" name="input" value="Content added" id="input-value">
+</label>
+<label for="input-disabled">
+  Input label
+  <input type="text" name="input" value="I am disabled" id="input-disabled" disabled>
+</label>
+```
+*/
+
+input,
+textarea,
+select {
+  position: relative;
+  border: 1px solid clr(gray-dark);
+  background: transparent;
+  appearance: none;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+  padding: ($vr*2 - 0.2rem) $vr*2;
+  color: clr(black);
+  background: clr(white);
+  transition: border $anim;
+  border-radius: $vr/2;
+
+  &:not(:disabled):focus {
+    border-color: clr(black);
+  }
+
+  &[aria-invalid="true"] {
+    border-color: clr(alert);
+  }
+}
+
+input {
+  line-height: $vr*6 - 0.2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+textarea {
+  line-height: 1.8rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: #aaaaaa;
+  vertical-align: middle;
+}
+
+input::placeholder {
+  line-height: $vr*6 - 0.2rem;
+}
+
+input.quantity {
+  text-align: center;
+  width: 6.5rem;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 54px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*---
+title:   Select
+name:    form-select
+section: form
+---
+
+```example:html
+<label for="select1">
+  Select label
+  <select class="" name="select" id="select1">
+    <option value="1">Select option</option>
+    <option value="2">Select option</option>
+    <option value="3">Select option</option>
+    <option value="4">Select option</option>
+    <option value="5">Select option</option>
+  </select>
+</label>
+<label for="select2">
+  Select label
+  <select class="" name="select" id="select2" disabled>
+    <option value="1">Select option</option>
+    <option value="2">Select option</option>
+    <option value="3">Select option</option>
+    <option value="4">Select option</option>
+    <option value="5">Select option</option>
+  </select>
+</label>
+```
+*/
+
+select {
+  background-image: svg-inline(arrow-down);
+  background-repeat: no-repeat;
+  background-size: $vr*4;
+  background-position: calc(100% - #{$vr}) 50%;
+  padding-right: $vr*4;
+  cursor: pointer;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &.small {
+    background-position: calc(100% - 1.2rem) 50%;
+    padding: 0.5rem 4rem 0.5rem 2rem;
+  }
+}
+
+/*---
+title:   Textarea
+name:    form-textarea
+section: form
+---
+
+```example:html
+<label for="textarea">
+  Textarea label
+  <textarea name="textarea" id="textarea" placeholder="Textarea placeholder"></textarea>
+</label>
+```
+*/
+textarea {
+  resize: vertical;
+  min-height: $vr*11;
+}
+
+/*---
+title:   Input group
+name:    form-input-group
+section: form
+---
+
+```example:html
+<label for="input-group" class="input-group">
+  Group input
+  <div class="input-group--inner">
+    <input type="text" name="input-group" id="input-group" value="" placeholder="input placeholder" id="input-group">
+    <button type="submit" name="button" class="button black">OK</button>
+  </div>
+</label>
+<label for="input-group-disabled" class="input-group">
+  Group input disabled
+  <div class="input-group--inner">
+    <input type="text" name="input-group" id="input-group-disabled" value="" placeholder="input placeholder" id="input-group" disabled>
+    <button type="submit" name="button" class="button black disabled">OK</button>
+  </div>
+</label>
+
+<label for="input-group_search" class="input-group search">
+  <div class="input-group--inner">
+    <input type="text" name="input-group" value="" placeholder="Rechercher un produit" id="input-group_search">
+    <button type="submit" name="button" class="button black">
+      <svg class="icon"><use xlink:href="#icon-search" /></svg>
+    </button>
+  </div>
+</label>
+```
+*/
+
+.input-group {
+  width: 100%;
+
+  .input-group--inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 5rem;
+  }
+
+  input {
+    margin: 0;
+    width: 100%;
+    height: 5rem;
+    border-radius: 0;
+    border-right: 0;
+    line-height: 1.3rem;
+    background: clr(white);
+  }
+
+  input::placeholder {
+    line-height: 5rem;
+  }
+
+  input[type="submit"],
+  button {
+    height: 5rem;
+
+    &,
+    &.button[class] {
+      border-radius: 0;
+      border-left: none;
+      border-color: clr(gray);
+      background: clr(white);
+
+      &.disabled {
+        opacity: 1;
+        background-color: clr(gray-lighter);
+        color: clr(gray);
+      }
+    }
+  }
+
+  input:not([disabled]):hover {
+
+    &,
+    +input[type="submit"],
+    +button,
+    +input[type="submit"].button[class],
+    +button.button[class] {
+      border-color: clr(gray-darker);
+    }
+  }
+
+  input:focus {
+
+    +input[type="submit"],
+    +button,
+    +input[type="submit"].button[class],
+    +button.button[class] {
+      border-color: clr(black);
+
+      &:hover {
+        border: 1px solid clr(black);
+        border-left: none;
+      }
+    }
+  }
+
+  &.search {
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    // input[type="submit"],
+    // button{
+    //   border-left: none;
+    //   border-color: clr(gray);
+    //
+    //   &:hover{
+    //     border-color: clr(gray-dark);
+    //   }
+    // }
+    //
+    // input:hover + input[type="submit"],
+    // input:hover + button{
+    //   border-color: clr(gray-dark);
+    // }
+    // input:focus + input[type="submit"],
+    // input:focus + button{
+    //   border-color: clr(gray-darker);
+    // }
+    //
+    // input:focus + input[type="submit"]:hover,
+    // input:focus + button:hover{
+    //   border: 1px solid clr(gray-darker);
+    //   border-left: none;
+    // }
+    @media #{$sm-only} {
+      input {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+}
+
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+
+  +label {
+    position: relative;
+    cursor: pointer;
+    padding-left: $vr*6;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+
+    &:hover:before {
+      border-color: clr(gray-dark);
+    }
+
+    &:before {
+      content: "";
+
+      // height: 24px;
+      // width: 24px;
+      // border: 1px solid #E1DCD2;
+      // border-radius: 2px;
+      // background-color: #FFFFFF;
+
+      width: $vr*4;
+      height: $vr*4;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: clr(white);
+      border: 1px solid clr(gray);
+      box-sizing: border-box;
+      transition: border $anim;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: $vr*0.3;
+      top: $vr*0.3;
+      background: transparent;
+      transition: background $anim;
+    }
+
+    &.bordered {
+      padding: $vr;
+      border: 1px solid clr(gray);
+      transition: border $anim, background $anim;
+
+      &:before {
+        left: $vr;
+      }
+
+      &:after {
+        left: $vr*1.3;
+      }
+
+      &:hover {
+        border-color: clr(gray-dark);
+      }
+    }
+  }
+
+  &:checked {
+    +label {
+      &:before {
+        border-color: clr(black);
+      }
+
+      &.bordered {
+
+        &,
+        &:hover {
+          border-color: clr(black);
+        }
+
+        background: clr(gray-lighter);
+      }
+    }
+  }
+
+  &:disabled {
+    +label {
+      opacity: 0.4;
+      color: clr(gray-dark);
+      cursor: default;
+
+      &:before {
+        background: clr(gray-light);
+      }
+    }
+  }
+}
+
+/*---
+title:   Input radio
+name:    form-input-radio
+section: form
+---
+
+```example:html
+<div class="">
+  <input type="radio" name="radio" value="1" id="radio1">
+  <label for="radio1">
+    Radio option
+  </label>
+</div>
+<div class="">
+  <input type="radio" name="radio" value="2" id="radio2" checked>
+  <label for="radio2">
+    Radio option
+  </label>
+</div>
+<div class="">
+  <input type="radio" name="radio-disabled" value="2" id="radio2" disabled>
+  <label for="radio2">
+    Radio option
+  </label>
+</div>
+<div class="">
+  <input type="radio" name="radio-disabled" value="3" id="radio3" checked disabled>
+  <label for="radio3">
+    Radio option
+  </label>
+</div>
+```
+*/
+input[type="radio"] {
+  +label {
+    &:before {
+      border-radius: 50%
+    }
+
+    &:after {
+      width: $vr*0.4;
+      height: $vr*0.4;
+      border-radius: 50%;
+    }
+  }
+
+  &:checked {
+    +label {
+      &:after {
+        background: clr(black);
+      }
+    }
+  }
+}
+
+/*---
+title:   Input checkbox
+name:    form-input-checkbox
+section: form
+---
+
+```example:html
+<div class="">
+  <input type="checkbox" name="checkbox" value="1" id="checkbox1">
+  <label for="checkbox1">
+    Checkbox option
+  </label>
+</div>
+<div class="">
+  <input type="checkbox" name="checkbox" value="2" id="checkbox2" checked>
+  <label for="checkbox2">
+    Checkbox option
+  </label>
+</div>
+<div class="">
+  <input type="checkbox" name="checkbox" value="3" id="checkbox3" disabled>
+  <label for="checkbox3">
+    Checkbox option
+  </label>
+</div>
+<div class="">
+  <input type="checkbox" name="checkbox" value="4" id="checkbox4" checked disabled>
+  <label for="checkbox4">
+    Checkbox option
+  </label>
+</div>
+```
+*/
+input[type="checkbox"] {
+
+  +label {
+    &:before {
+      border-radius: $vr/2;
+      border-color: clr(gray-dark);
+    }
+
+    &:after {
+      left: 0;
+      top: 0;
+      width: $vr*4;
+      height: $vr*4;
+      background-image: svg-inline(check);
+      background-repeat: no-repeat;
+      background-size: $vr*3;
+      background-position: 50% 50%;
+      opacity: 0;
+      transition: opacity $anim;
+    }
+  }
+
+  &:checked {
+    +label {
+      &:after {
+        border-color: clr(black);
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &[id*="toggle-"]:not(:checked)~.toggle,
+  &[id*="toggle-"]:checked~.hide-when-toggle {
+    display: none;
+  }
+}
+
+label[for*="toggle-"] {
+  cursor: pointer;
+}

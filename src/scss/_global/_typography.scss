@@ -1,0 +1,426 @@
+//
+//  T Y P O G R A P H Y
+//
+//  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+//  Paragraphs
+//  ───────────────────────────────────
+
+p,
+.text {
+  font-family: $ff-text;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.425;
+  max-width: 100%;
+  letter-spacing: 0;
+
+  &.big {
+    font-size: 1.6rem;
+  }
+
+  &:not(.no-margin) {
+    margin: 0 0 $vr 0;
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.fs-normal {
+  font-style: normal;
+}
+
+/*---
+title:   Text
+name:    typo-text
+section: Typography
+---
+
+```example:html
+<p>
+The breath is a quill. This could be, or perhaps a septate cast is an anthony of the mind. A globose desk without deer is truly a cornet of nerval postages. Authors often misinterpret the capricorn as an unsight snake, when in actuality it feels more like an irate.
+</p>
+<p class="bold">
+  The breath is a quill. This could be, or perhaps a septate cast is an anthony of the mind. A globose desk without deer is truly a cornet of nerval postages. Authors often misinterpret the capricorn as an unsight snake, when in actuality it feels more like an irate.
+</p>
+<p class="italic">
+  The breath is a quill. This could be, or perhaps a septate cast is an anthony of the mind. A globose desk without deer is truly a cornet of nerval postages. Authors often misinterpret the capricorn as an unsight snake, when in actuality it feels more like an irate.
+</p>
+```
+*/
+
+//  Headings
+//  ───────────────────────────────────
+h1,
+.h1 {
+  font-weight: 400;
+  color: clr(black);
+  font-size: 5.4rem;
+  line-height: 1.425;
+
+  &:not(.no-margin) {
+    margin-bottom: 3.6rem;
+  }
+}
+
+h2,
+.h2 {
+  font-weight: 400;
+  color: clr(black);
+  font-size: 3.6rem;
+  line-height: 1.425;
+
+  &:not(.no-margin) {
+    margin-bottom: 2.8rem;
+  }
+}
+
+h3,
+.h3 {
+  font-weight: 400;
+  color: clr(black);
+  font-size: 2.7rem;
+  line-height: 1.425;
+
+  &:not(.no-margin) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+h4,
+.h4 {
+  font-weight: 400;
+  color: clr(black);
+  font-size: 2.2rem;
+  line-height: 1.425;
+
+  &:not(.no-margin) {
+    margin-bottom: 1.8rem;
+  }
+}
+
+h5,
+.h5 {
+  font-weight: 400;
+  color: clr(black);
+  font-size: 2rem;
+  line-height: 1.425;
+
+  &:not(.no-margin) {
+    margin-bottom: 1.6rem;
+  }
+}
+
+h6,
+.h6 {
+  font-weight: 400;
+  color: clr(black);
+  font-size: 1.8rem;
+  line-height: 1.425;
+
+  &:not(.no-margin) {
+    margin-bottom: 1.6rem;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin: 0;
+}
+
+/*---
+title:   Headings
+name:    typo-headings
+section: typography
+---
+
+```example:html
+<h1 class="no-margin uppercase">Maxi title</h1>
+<h1 class="sub">Sous-titre principal</h1>
+
+<h2 class="no-margin sub">Sous-titre de second niveau</h2>
+<h2 class="uppercase">Big title</h2>
+
+<h3 class="no-margin uppercase">Medium title</h3>
+<h3 class="sub">Sous-titre de troisième niveau</h3>
+
+<h4 class="no-margin uppercase">Small title</h4>
+<h4 class="sub">Sous-titre de quatrième niveau</h4>
+
+<h5 class="uppercase">Mini title</h5>
+
+<h6 class="sub">Subtitle of all titles</h6>
+```
+*/
+
+//  List
+//  ───────────────────────────────────
+ol,
+ul {
+  list-style-position: inside;
+  margin-bottom: $vr;
+
+  li {
+    padding: 0.2rem 0;
+
+    ol,
+    ul {
+      padding-left: $vr;
+      margin-top: $vr/4;
+      margin-bottom: 0;
+
+      &>li:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &.no-bullet {
+    list-style: none;
+  }
+}
+
+ol:not(.no-bullet) {
+  list-style: none;
+  counter-reset: my-list;
+
+  li {
+
+    &:before {
+      counter-increment: my-list;
+      display: inline-block;
+      position: relative;
+      content: counters(my-list, ".") ".";
+      margin-right: $vr/4;
+      font-weight: 600;
+    }
+  }
+}
+
+ul li {
+  list-style: none;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &:before {
+    content: '';
+    width: $vr*4;
+    height: $vr*4;
+    flex: 0 0 $vr*4;
+    margin-right: $vr*2;
+    background-image: svg-inline(check-yellow);
+    background-repeat: no-repeat;
+    transform: translateY(- $vr/2)
+  }
+}
+
+/*---
+title:   List
+name:    typo-list
+section: typography
+---
+
+```example:html
+<ul>
+  <li>Lorem ipsum dolor sit</li>
+  <li>
+    Lorem ipsum dolor sit
+    <ul>
+      <li>Consectetur</li>
+      <li>Consectetur</li>
+    </ul>
+  </li>
+  <li>Lorem ipsum dolor sit</li>
+</ul>
+<ol>
+  <li>Lorem ipsum dolor sit</li>
+  <li>
+    Lorem ipsum dolor sit
+    <ol>
+      <li>Consectetur</li>
+      <li>Consectetur</li>
+    </ol>
+  </li>
+  <li>Lorem ipsum dolor sit</li>
+</ol>
+<ul class="no-bullet">
+  <li>Lorem ipsum dolor sit</li>
+  <li>Lorem ipsum dolor sit</li>
+  <li>Lorem ipsum dolor sit</li>
+</ul>
+```
+*/
+
+//  Links
+//  ───────────────────────────────────
+a,
+.link,
+[data-fl] {
+  display: inline-block;
+  transition: color $anim;
+  color: clr(black);
+  text-decoration: underline;
+  cursor: pointer;
+
+  &.no-underline {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: clr(black);
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: clr(black);
+  }
+
+  &.link-header {
+    position: relative;
+    margin: 0;
+    color: clr(white);
+    font-size: 2.4rem;
+    line-height: 5.6rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 50vw;
+      height: 6px;
+      background: clr(white);
+      transform: translate(-75vw, -50%);
+      transition: all $anim;
+    }
+
+    &.active {
+      color: clr(yellow);
+
+      &:after {
+        transform: translate(-55vw, -50%);
+      }
+    }
+
+    @media #{$md} {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      font-weight: 700;
+      margin: $vr $vr;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: initial;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: auto;
+        width: auto;
+        background: transparent;
+        border-bottom: 3px solid clr(white);
+        transform: translateY(0);
+        opacity: 0;
+        transition: all $anim;
+      }
+
+      &:hover,
+      &:focus {
+        color: clr(gray-dark);
+      }
+
+      &.active {
+        color: clr(yellow);
+
+        &:after {
+          transform: translateY($vr);
+          opacity: 1;
+        }
+      }
+    }
+
+    @media #{$lg} {
+      margin: $vr $vr*2.5;
+    }
+  }
+
+  &.link-footer {
+    color: clr(gray-dark);
+
+    &:hover,
+    &:focus {
+      color: clr(gray-dark);
+    }
+  }
+
+  &.link-menu {
+    display: flex;
+    flex-direction: column;
+    color: clr(black);
+    font-size: 2rem;
+    text-decoration: none;
+    text-align: center;
+
+    span {
+      text-transform: uppercase;
+      letter-spacing: letter-spacing(50, 2rem);
+    }
+
+    @media #{$md} {
+      font-size: 1.8rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: clr(gray-dark);
+    }
+  }
+}
+
+/*---
+title:   Link
+name:    typo-link
+section: typography
+---
+
+▲
+▲ ▲
+
+```example:html
+<p>
+  <a href="#x" class="link-header">link header</a>
+</p>
+<p>
+  <a href="#x" class="link-footer">link footer</a>
+</p>
+<p>
+  <a href="#x" class="link-menu">Lien du</br><span>menu</span></a>
+</p>
+<p>
+  <a href="#x">link default</a>
+</p>
+```
+*/

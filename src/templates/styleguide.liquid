@@ -1,0 +1,147 @@
+{% capture title%}{{ homepage.title }}{% endcapture %}
+{% capture description%}{{ homepage.meta_description }}{% endcapture %}
+
+{% include 'partials/head.liquid' %}
+  <body class="">
+    {% include 'partials/sprite.liquid' %}
+    {% include 'partials/header.liquid' %}
+
+    <div class="row mgt-20">
+      <div class="sm-column-12">
+        <h2 class="no-margin">Grid</h2>
+      </div>
+    </div>
+    <div class="row mgt-5">
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+      <div class="column-1 bg-gray">
+        <div class="bg-gray-dark h-10"></div>
+      </div>
+    </div>
+    <div class="row mgt-20">
+      <div class="sm-column-12">
+        <h2 class="no-margin">Colors</h2>
+      </div>
+    </div>
+    <div class="row align-start-center mgt-5">
+      <div class="flex layout-column pgh-1 flex-auto">
+        <div class="bg-yellow h-20 mgb-1"></div>
+        <p class="no-margin">yellow</p>
+      </div>
+      <div class="flex layout-column pgh-1 flex-auto">
+        <div class="bg-black h-20 mgb-1"></div>
+        <p class="no-margin">black</p>
+      </div>
+      <div class="flex layout-column pgh-1 flex-auto">
+        <div class="bg-gray-dark h-20 mgb-1"></div>
+        <p class="no-margin">Gray-dark</p>
+      </div>
+      <div class="flex layout-column pgh-1 flex-auto">
+        <div class="bg-gray h-20 mgb-1"></div>
+        <p class="no-margin">Gray</p>
+      </div>
+      <div class="flex layout-column pgh-1 flex-auto">
+        <div class="bg-white bd-1-gray h-20 mgb-1"></div>
+        <p class="no-margin">White</p>
+      </div>
+    </div>
+    <div class="row mgt-20">
+      <div class="sm-column-12">
+        <h2 class="no-margin">Buttons</h2>
+      </div>
+    </div>
+    <div class="row mgt-5">
+      <div class="column-4">
+        <div><button class="button yellow">Yellow</button></div>
+      </div>
+      <div class="column-4">
+        <div><button class="button black">Black</button></div>
+      </div>
+      <div class="column-4">
+        <div><button class="button white">White</button></div>
+      </div>
+    </div>
+    <div class="row mgt-20">
+      <div class="sm-column-12">
+        <h2 class="no-margin">Form</h2>
+      </div>
+    </div>
+    <div class="row mgt-5">
+      <div class="column-3">
+        <label for="input-text">
+          <div>Votre nom <span>(lorem ipsum)</span></div>
+          <input type="text" id="input-text" placeholder="Ex: Dupont">
+        </label>
+      </div>
+      <div class="column-3">
+        <label for="volume">
+          <div>Contenance des fûts <span>(en cL)</span></div>
+          <select name="volumne" id="volume">
+            <option>25cL</option>
+            <option>33cL</option>
+            <option>50cL</option>
+          </select>
+        </label>
+      </div>
+      <div class="column-6">
+        <label for="textarea">
+          <div>Votre message <span>(lorem ipsum)</span></div>
+          <textarea name="message" id="textarea" rows="10"></textarea>
+        </label>
+      </div>
+    </div>
+    <div class="row mgt-5">
+      <div class="column-12">
+        <input type="checkbox" name="checkbox" value="1" id="checkbox1">
+        <label for="checkbox1">
+          Checkbox option
+        </label>
+      </div>
+    </div>
+    <div class="row mgt-20">
+      <div class="sm-column-12">
+        <h2 class="no-margin">Pattern</h2>
+      </div>
+    </div>
+    <div class="row mgt-5">
+      <div class="column-12">
+        <div class="bg-pattern bg-gray-dark h-20"></div>
+      </div>
+    </div>
+
+    {% include 'partials/footer.liquid' %}
+    {% include 'partials/footer-includes.liquid' %}
+  </body>
+</html>
+

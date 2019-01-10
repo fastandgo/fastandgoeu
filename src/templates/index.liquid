@@ -1,0 +1,33 @@
+{% capture title%}{{ homepage.title }}{% endcapture %}
+{% capture description%}{{ homepage.meta_description }}{% endcapture %}
+
+{% include 'partials/head.liquid' %}
+  <body class="">
+    {% include 'partials/sprite.liquid' %}
+    {% include 'partials/header.liquid' %}
+
+    {% include 'sections/hero.liquid' %}
+    {% include 'sections/simulation.liquid' %}
+    {% include 'sections/infos.liquid' %}
+
+    {% include 'sections/fixed.liquid' %}
+    {% include 'sections/mobile.liquid' %}
+
+    {% capture headline %}{{ headlines.first }}{% endcapture %}
+    {% include 'sections/headline.liquid' %}
+
+    {% include 'sections/glass.liquid' %}
+
+    {% capture headline %}{{ headlines.second }}{% endcapture %}
+    {% include 'sections/headline.liquid' %}
+
+    {% include 'sections/video.liquid' %}
+    {% include 'sections/team.liquid' %}
+    {% include 'sections/contact.liquid' %}
+    {% include 'sections/support.liquid' %}
+
+    {% include 'partials/footer.liquid' %}
+    {% include 'partials/footer-includes.liquid' %}
+  </body>
+</html>
+

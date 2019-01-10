@@ -1,0 +1,116 @@
+//
+//  V A R I A B L E S
+//
+//  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+//  Fonts
+//  ───────────────────────────────────
+/*---
+  title:   Fonts
+  section: Variables
+  ---
+
+  Variables containing project fonts
+
+  ```
+  $ff-text: 'Montserrat', sans-serif;
+  ```
+*/
+$ff-text: 'Montserrat',
+sans-serif;
+
+//  Animations
+//  ───────────────────────────────────
+/*---
+  title:   Animation duration/easing
+  section: Variables
+  ---
+
+  Use this for animation timing and easing. You can either use the shorthand `$anim` or directly use `$anim-duration` and `$anim-easing` for fine tuning.
+
+  ```
+  $anim-duration: 250ms;
+  $anim-easing: cubic-bezier(.55,0,.1,1) ;
+  $anim: $anim-duration $anim-easing;
+  ```
+*/
+$anim-duration: 300ms;
+$anim-easing: cubic-bezier(.55, 0, .1, 1);
+$anim: $anim-duration $anim-easing;
+
+//  Grid
+//  ───────────────────────────────────
+/*---
+  title:   Vertical rythmn
+  name:    vertical-rythmn-grid
+  section: Grid
+  ---
+
+  Use `$vr` in order to keep vertical rythmn accross the entire project.
+
+  ```
+  $vr: 2rem;
+  ```
+*/
+$vr: 0.8rem;
+
+//  Grid
+//  ───────────────────────────────────
+/*---
+  title:   Grid size
+  name:    size-grid
+  section: Grid
+  ---
+
+  ```
+  $row-width: 144rem;
+  $container-width: 100%;
+  $total-columns: 12;
+  $column-gutter: 4rem;
+  $column-width: 8rem;
+  ```
+*/
+$row-width: 96rem;
+$container-width: calc(100% - #{$vr *2});
+$total-columns: 12;
+$column-gutter: 1.6rem;
+$column-width: 6.4rem;
+
+/*---
+  title:   Debug grid
+  section: Variables
+  ---
+
+  Update this scss map to configure debgrid in order to display overlay debug grid in your project.
+
+  ```
+  $debgrid: (
+    horizontal: false,
+    maxwidth: $row-width,
+    width: $container-width,
+    columns: $total-columns,
+    gutter: $column-gutter,
+    colorColumn: rgba(clr(gray-darker), 0.1),
+    colorGutter: rgba(clr(gray-darker), 0.05),
+    vertical: false,
+    vertical-size: $vr,
+    colorVOdd: rgba(clr(gray-darker), 0.1),
+    colorVEven: transparent
+  );
+  ```
+*/
+$debgrid: (horizontal: false,
+maxwidth: $row-width,
+width: $container-width,
+columns: $total-columns,
+gutter: $column-gutter,
+colorColumn: rgba(#fc0, 0.2),
+colorGutter: rgba(120, 120, 120, 0.05),
+vertical: false,
+vertical-size: $vr,
+colorVOdd: rgba(120, 0, 200, 0.05),
+colorVEven: transparent);
+
+//  Others
+//  ───────────────────────────────────
+$global-radius: $vr/2;

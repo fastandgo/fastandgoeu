@@ -1,0 +1,109 @@
+<div class="product product--mobile desc-section sm-pgv-5 md-pgv-10">
+  <div class="row sm-layout-column md-layout-rowreverse align-start-stretch">
+    <div class="sm-column-12 md-column-6 sm-pgh-0 md-pgh-1">
+      <div class="bg-gray bg-pattern pgv-9 md-pgh-3 flex align-center-center">
+        <div class="relative">
+          <picture alt="" width="240">
+            <source srcset="img/d_dispenser_mobile.png 1x, img/d_dispenser_mobile@2x.png 2x" media="(min-width: 640px)">
+            <source srcset="img/m_dispenser_mobile.png 1x, img/m_dispenser_mobile@2x.png 2x" media="(max-width: 639px)">
+            <img src="img/d_dispenser_mobile.png" />
+          </picture>
+          <span class="js-more see-more" data-target="mobile-filling" style="top: 8%; left: 20%;">
+            <svg class="text-black"><use xlink:href="#icon-plus" /></svg>
+            <svg class="round bg-yellow text-black"><use xlink:href="#icon-eye" /></svg>
+          </span>
+          <span class="js-more see-more" data-target="mobile-accessories" style="top: 20%; left: 90%;">
+            <svg class="text-black"><use xlink:href="#icon-plus" /></svg>
+            <svg class="round bg-yellow text-black"><use xlink:href="#icon-eye" /></svg>
+          </span>
+          <span class="js-more see-more" data-target="mobile-handle" style="top: 43%; left: 72%;">
+            <svg class="text-black"><use xlink:href="#icon-plus" /></svg>
+            <svg class="round bg-yellow text-black"><use xlink:href="#icon-eye" /></svg>
+          </span>
+          <span class="js-more see-more" data-target="mobile-cold" style="top: 50%; left: 5%;">
+            <svg class="text-black"><use xlink:href="#icon-plus" /></svg>
+            <svg class="round bg-yellow text-black"><use xlink:href="#icon-eye" /></svg>
+          </span>
+          <span class="js-more see-more" data-target="mobile-wheels" style="top: 90%; left: 53%;">
+            <svg class="text-black"><use xlink:href="#icon-plus" /></svg>
+            <svg class="round bg-yellow text-black"><use xlink:href="#icon-eye" /></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="sm-column-12 md-column-6 flex layout-column">
+      <div class="relative sm-pgh-2 md-pgh-3 flex-full flex layout-column align-center-start">
+        <input type="checkbox" id="mobile-desc-toggle" class="toggle dp-none">
+        <h2 class="no-margin mgb-2 sm-fz-32 md-fz-48 lh-1_2 fw-700">{{products.mobile.title}}</h2>
+        {% comment %} <p class="no-margin mgb-4 sm-dp-none md-dp-block fz-14 lh-1_6 text-gray-darker">{{products.mobile.subtitle}}</p> {% endcomment %}
+        <p class="no-margin mgb-5 fz-14 lh-1_8">{{products.mobile.text}}</p>
+        <label for="mobile-desc-toggle" class="no-margin md-mgb-2 sm-fz-16 md-fz-18 lh-1_1 fw-700">{{products.mobile.list_title}}</label>
+        <ul class="js-toggle-mh">
+          {% for item in products.mobile.list %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        <div class="product__bullets">
+          <button class="w-5 h-5 round bg-white shadow product__bullets__close js-close-bullets">
+            <svg class="w-4 h-4 text-black"><use xlink:href="#icon-cross"/></svg>
+          </button>
+          <div class="product__bullet" id="mobile-filling">
+            <picture alt="" class="size-100p">
+              <source srcset="img/d_focus_gobelets.jpg 1x, img/d_focus_gobelets@2x.jpg 2x" media="(min-width: 640px)">
+              <source srcset="img/m_focus_gobelets.jpg 1x, img/m_focus_gobelets@2x.jpg 2x" media="(max-width: 639px)">
+              <img src="img/d_focus_gobelets.jpg" />
+            </picture>
+            <div class="flex layout-column pg-3">
+              <h3 class="no-margin mgb-1 fz-18 lh-1_1 fw-700">{{products.bullets.filling.title}}</h3>
+              <p class="no-margin fz-14 lh-1_8">{{products.bullets.filling.text}}</p>
+            </div>
+          </div>
+          <div class="product__bullet" id="mobile-accessories">
+            <picture alt="" class="size-100p">
+              <source srcset="img/d_focus_accessoires@2x.jpg 1x, img/d_focus_accessoires@2x.jpg 2x" media="(min-width: 640px)">
+              <source srcset="img/m_focus_accessoires@2x.jpg 1x, img/m_focus_accessoires@2x.jpg 2x" media="(max-width: 639px)">
+              <img src="img/d_focus_accessoires.jpg" />
+            </picture>
+            <div class="flex layout-column pg-3">
+              <h3 class="no-margin mgb-1 fz-18 lh-1_1 fw-700">{{products.bullets.accessories.title}}</h3>
+              <p class="no-margin fz-14 lh-1_8">{{products.bullets.accessories.text}}</p>
+            </div>
+          </div>
+          <div class="product__bullet" id="mobile-handle">
+            <picture alt="" class="size-100p">
+              <source srcset="img/d_focus_poignets.jpg 1x, img/d_focus_poignets@2x.jpg 2x" media="(min-width: 640px)">
+              <source srcset="img/m_focus_poignets.jpg 1x, img/m_focus_poignets@2x.jpg 2x" media="(max-width: 639px)">
+              <img src="img/d_focus_poignets.jpg" />
+            </picture>
+            <div class="flex layout-column pg-3">
+              <h3 class="no-margin mgb-1 fz-18 lh-1_1 fw-700">{{products.bullets.handle.title}}</h3>
+              <p class="no-margin fz-14 lh-1_8">{{products.bullets.handle.text}}</p>
+            </div>
+          </div>
+          <div class="product__bullet" id="mobile-cold">
+            <picture alt="" class="size-100p">
+              <source srcset="img/d_focus_groupe_froid.jpg 1x, img/d_focus_groupe_froid@2x.jpg 2x" media="(min-width: 640px)">
+              <source srcset="img/m_focus_groupe_froid.jpg 1x, img/m_focus_groupe_froid@2x.jpg 2x" media="(max-width: 639px)">
+              <img src="img/d_focus_groupe_froid.jpg" />
+            </picture>
+            <div class="flex layout-column pg-3">
+              <h3 class="no-margin mgb-1 fz-18 lh-1_1 fw-700">{{products.bullets.cold.title}}</h3>
+              <p class="no-margin fz-14 lh-1_8">{{products.bullets.cold.text}}</p>
+            </div>
+          </div>
+          <div class="product__bullet" id="mobile-wheels">
+            <picture alt="" class="size-100p">
+              <source srcset="img/d_focus_roulette.jpg 1x, img/d_focus_roulette@2x.jpg 2x" media="(min-width: 640px)">
+              <source srcset="img/m_focus_roulette.jpg 1x, img/m_focus_roulette@2x.jpg 2x" media="(max-width: 639px)">
+              <img src="img/d_focus_roulette.jpg" />
+            </picture>
+            <div class="flex layout-column pg-3">
+              <h3 class="no-margin mgb-1 fz-18 lh-1_1 fw-700">{{products.bullets.wheels.title}}</h3>
+              <p class="no-margin fz-14 lh-1_8">{{products.bullets.wheels.text}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

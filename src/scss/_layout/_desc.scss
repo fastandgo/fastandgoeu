@@ -1,0 +1,226 @@
+.desc-section {
+  @media #{$sm-only} {
+    .row> :last-child {
+      margin-top: $vr * -3;
+    }
+
+    label {
+      text-decoration: underline;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      transition: margin 500ms ease-out;
+
+      &:after {
+        content: '';
+        width: $vr*4;
+        height: $vr*4;
+        background-image: svg-inline(arrow-right);
+        transform: rotate(90deg);
+        transition: transform 500ms ease-out;
+      }
+
+      ~ul {
+        max-height: 0;
+        margin-bottom: 0;
+        overflow: hidden;
+        transition: max-height 500ms ease-out, margin 500ms ease-out;
+      }
+    }
+
+    .toggle:checked {
+      ~label {
+        margin-bottom: $vr*2;
+
+        &:after {
+          transform: rotate(270deg);
+        }
+      }
+
+      ~ul {
+        max-height: var(--max-height);
+        margin-bottom: $vr;
+      }
+    }
+  }
+
+  &.product {
+    .see-more {
+      position: absolute;
+      display: block;
+      background: clr(white);
+      cursor: pointer;
+      width: $vr*5;
+      height: $vr*5;
+      padding: $vr/2;
+      border-radius: 50%;
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+
+      svg {
+        position: relative;
+        width: $vr*4;
+        height: $vr*4;
+        transition: opacity 300ms ease-out, transform 300ms ease-out;
+      }
+
+      > :last-child {
+        position: absolute;
+        top: $vr/2;
+        right: $vr/2;
+        bottom: $vr/2;
+        left: $vr/2;
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      &.active {
+        svg {
+          opacity: 0;
+        }
+
+        > :last-child {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+
+    .product__bullets {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      pointer-events: none;
+      // overflow: hidden;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: clr(white);
+        // z-index: -1;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        transform: scaleY(0);
+        transform-origin: 50% 100%;
+        transition: box-shadow 150ms $anim-easing 450ms,
+          transform 600ms $anim-easing 250ms;
+      }
+
+      &__close {
+        position: absolute;
+        z-index: 4;
+        top: $vr*2;
+        right: $vr*2;
+        cursor: pointer;
+        opacity: 0;
+        transform: rotate(270deg);
+        transition: transform 600ms $anim-easing,
+          opacity 600ms $anim-easing;
+      }
+
+      &.active {
+        pointer-events: auto;
+
+        .product__bullets__close {
+          opacity: 1;
+          transform: rotate(0deg);
+          transition-delay: 350ms;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &:after {
+          box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+          transform: scaleY(1);
+          transition: box-shadow 150ms $anim-easing 0ms,
+            transform 600ms $anim-easing 0ms;
+        }
+      }
+
+      @media #{$sm-only} {
+        position: fixed;
+        height: calc(var(--vh, 1vh) * 100);
+        width: 100vw;
+        z-index: 6;
+      }
+    }
+
+    .product__bullet {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      flex: 0 0 100%;
+      overflow: hidden;
+      background: white;
+      max-height: 0;
+      top: 100%;
+      transition: max-height 600ms $anim-easing,
+        top 600ms $anim-easing;
+      transition-delay: 250ms;
+
+      >picture {
+        max-height: 0rem;
+        display: block;
+        overflow: hidden;
+        transition: transform 600ms $anim-easing,
+          max-height 600ms $anim-easing;
+        transition-delay: 250ms;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      h3,
+      p {
+        transform: translateY(2rem);
+        opacity: 0;
+        transition: transform 600ms $anim-easing,
+          opacity 600ms $anim-easing;
+      }
+
+      &.active {
+        z-index: 3;
+        max-height: 55rem;
+        top: 0;
+        transition-delay: 0ms;
+
+        @media #{$sm-only} {
+          max-height: calc(var(--vh, 1vh) * 100);
+        }
+
+        >picture {
+          max-height: 32rem;
+          transition-delay: 0ms;
+        }
+
+        h3,
+        p {
+          transform: translateY(0);
+          opacity: 1;
+          transition-delay: 350ms;
+        }
+
+        p {
+          transition-delay: 400ms;
+        }
+      }
+    }
+
+    &--fixed {}
+
+    &--mobile {}
+  }
+}

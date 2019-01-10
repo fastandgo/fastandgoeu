@@ -1,0 +1,23 @@
+<header class="">
+  <div class="row">
+    <div class="column-12 no-width layout-row align-spacebetween-center">
+      <img src="svg/logo.svg" alt="" height="64" class="logo">
+      <nav class="flex sm-layout-column md-layout-row md-align-end-center layout-wrap" id="main-nav">
+        {% for link in header.links %}
+          <a data-target="{{ link.url }}" class="link-header smoothscroll {{ link.classes }}">{{ link.name }}</a>
+        {% endfor %}
+        <div class="social md-dp-none flex mgt-3">
+          <div class="w-5 h-5 round bg-white flex align-center-center mgr-5"><svg class="w-4 h-4 text-black"><use xlink:href="#icon-facebook" /></svg></div>
+          <div class="w-5 h-5 round bg-white flex align-center-center mgr-5"><svg class="w-4 h-4 text-black"><use xlink:href="#icon-twitter" /></svg></div>
+          <div class="w-5 h-5 round bg-white flex align-center-center"><svg class="w-4 h-4 text-black"><use xlink:href="#icon-instagram" /></svg></div>
+        </div>
+        <button class="w-5 h-5 round bg-white md-dp-none shadow nav-trigger js-menu-trigger">
+          <svg class="w-4 h-4 text-black"><use xlink:href="#icon-cross"/></svg>
+        </button>
+      </nav>
+      <button class="w-5 h-5 flex align-center-center round bg-white md-dp-none shadow js-menu-trigger">
+        <svg class="w-4 h-4 text-black"><use xlink:href="#icon-burger"/></svg>
+      </button>
+    </div>
+  </div>
+</header>

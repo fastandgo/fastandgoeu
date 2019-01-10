@@ -1,0 +1,16 @@
+$colors: map-merge((yellow: #ffcc00,
+black: #000000), $colors);
+
+/*---
+  title:   Brand
+  name:    brand-colors
+  order:    1
+
+  section: design_colors
+  ---
+  ```example:color
+  line 2
+  @color: #{clr(yellow)} @name: yellow
+  @color: #{clr(black)} @name: black
+  ```
+*/

@@ -1,0 +1,19 @@
+<div class="hero flex align-start-center sm-pg-3 md-pgr-0" id="accueil">
+  <div class="row">
+    <div class="column-12 no-width layout-column align-start-start">
+      <h1 class="flex layout-column sm-fz-40 md-fz-56 sm-lh-1_425 md-lh-1_2 fw-700 text-white">
+        <span>{{ hero.title_first }}</span>
+        <span class="text-yellow">{{ hero.title_second }}</span>
+      </h1>
+      <a data-target="#simulation" class="button white sm-size-100p md-size-auto smoothscroll">{{ hero.button_label }}</a>
+    </div>
+  </div>
+  <a data-target="#simulation" class="no-underline w-6 h-6 bg-white round flex align-center-center hero__scroll smoothscroll">
+    <svg class="w-5 h-5"><use xlink:href="#icon-scroll" /></svg>
+  </a>
+  <div class="hero__video">
+    <video preload="auto" autoplay="autoplay" loop="loop" muted="true" id="vimeo-hero">
+      <source src="https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/2065/12/310325886/1194121711.mp4?token=1547050765-0x8c75c5b35c45a51df5a02cf18c5257324998e1c1&download=1&filename=FAST%26GO.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>

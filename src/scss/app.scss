@@ -1,0 +1,101 @@
+// @import "normalize/import-now";
+
+//  Breakpoints
+//  ───────────────────────────────────
+/*---
+  title:   Breakpoints
+  section: Variables
+  ---
+
+  We have 3 main breakpoints based on Foundation and usefull in mobile first development.
+
+  `$sm` is used for style for mobile, tablet and desktop (equals to no media query)
+
+  `$md` is used for style for tablet and desktop `(min-width: 641px)`
+
+  `$lg` is used for style for desktop only `(min-width: 1025px)`
+*/
+$sm-breakpoint: 640px;
+$md-breakpoint: 1024px;
+$lg-breakpoint: 1440px;
+
+$sm-range: (0, $sm-breakpoint);
+$md-range: ($sm-breakpoint + 1px, $md-breakpoint);
+$lg-range: ($md-breakpoint + 1px, $lg-breakpoint);
+
+$screen: "only screen";
+
+$sm-up: $screen;
+$sm-only: "#{$screen} and (max-width: #{nth($sm-range, 2)})";
+
+$md-up: "#{$screen} and (min-width:#{nth($md-range, 1)})";
+$md-only: "#{$screen} and (min-width:#{nth($md-range, 1)}) and (max-width:#{nth($md-range, 2)})";
+
+$lg-up: "#{$screen} and (min-width:#{nth($lg-range, 1)})";
+$lg-only: "#{$screen} and (min-width:#{nth($lg-range, 1)}) and (max-width:#{nth($lg-range, 2)})";
+
+$retina: ("#{$screen} and (-webkit-min-device-pixel-ratio: 2)",
+"#{$screen} and (min--moz-device-pixel-ratio: 2)",
+"#{$screen} and (-o-min-device-pixel-ratio: 2/1)",
+"#{$screen} and (min-device-pixel-ratio: 2)",
+"#{$screen} and (min-resolution: 192dpi)",
+"#{$screen} and (min-resolution: 2dppx)"
+);
+
+// Legacy
+$sm: $sm-up;
+$md: $md-up;
+$lg: $lg-up;
+
+$bps: (#{$sm} 'sm',
+#{$md} 'md',
+#{$lg} 'lg'
+);
+
+//  Overview
+//  ───────────────────────────────────
+@import 'overview/_overview';
+@import 'design/_design';
+
+//  Helpers
+//  ───────────────────────────────────
+@import '_helpers/variables';
+@import '_helpers/placeholders';
+/* postcss-cleaner: ignore on*/
+@import '_helpers/debgrid';
+/* postcss-cleaner: ignore off*/
+
+//  Global
+//  ───────────────────────────────────
+@import '_global/commons';
+@import '_atoms/icons';
+@import '_global/typography';
+
+//  Atoms
+//  ───────────────────────────────────
+@import '_atoms/grid';
+@import '_atoms/helpers';
+@import '_atoms/buttons';
+@import '_atoms/form';
+@import '_atoms/modal';
+@import '_atoms/alert';
+@import '_atoms/table';
+
+//  Molecules
+//  ───────────────────────────────────
+// @import '_molecules/surheader';
+@import '_molecules/header';
+// @import '_molecules/footer';
+// @import '_molecules/breadcrumb';
+
+//  Layout
+//  ───────────────────────────────────
+@import '_layout/styleguides';
+@import '_layout/hero';
+@import '_layout/simulation';
+@import '_layout/infos';
+@import '_layout/headline';
+@import '_layout/desc';
+@import '_layout/video';
+@import '_layout/team';
+@import '_layout/support';

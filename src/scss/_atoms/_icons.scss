@@ -1,0 +1,197 @@
+//
+//  I C O N S
+//
+//  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+svg.icon,
+.icon-bg {
+
+  &,
+  &.sm-normal {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &.small,
+  &.sm-small {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &.xsmall,
+  &.sm-xsmall {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  &.big,
+  &.sm-big {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  &.xxxl,
+  &.sm-xxxl {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  &.xxl,
+  &.sm-xxl {
+    width: 7.2rem;
+    height: 7.2rem;
+  }
+
+  @media #{$md} {
+    &.md-small {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &.md-normal {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &.md-big {
+      width: 4.2rem;
+      height: 4.2rem;
+    }
+  }
+
+  @media #{$md} {
+    &.lg-small {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &.lg-normal {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &.lg-big {
+      width: 4.2rem;
+      height: 4.2rem;
+    }
+  }
+
+}
+
+svg.icon {
+  @each $color in $colors {
+    $key: nth($color, 1);
+    $value: nth($color, 2);
+
+    &.#{$key} {
+      color: $value !important;
+    }
+  }
+}
+
+
+.icon-bg {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@svg-load arrow-right url(../svg/sprite/arrow.svg) {
+  transform: translate(1, 0);
+
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(black)};
+  }
+}
+
+@svg-load arrow-right-white url(../svg/sprite/arrow.svg) {
+
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(white)};
+  }
+}
+
+@svg-load arrow-down url(../svg/sprite/arrow.svg) {
+  transform: rotate(90);
+
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(black)};
+  }
+}
+
+@svg-load cross url(../svg/sprite/cross.svg) {
+  transform: rotate(90);
+
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(black)};
+  }
+}
+
+@svg-load check url(../svg/sprite/check.svg) {
+
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(black)};
+  }
+}
+
+@svg-load check-yellow url(../svg/sprite/check.svg) {
+
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(yellow)};
+  }
+}
+
+/*---
+title:   Icons
+name:    icons
+---
+
+```example:html
+<div>
+  <svg class="icon big"><use xlink:href="#icon-account" /></svg>
+  <svg class="icon big"><use xlink:href="#icon-arrow_down" /></svg>
+  <svg class="icon big"><use xlink:href="#icon-arrow_left_slider" /></svg>
+  <svg class="icon big"><use xlink:href="#icon-arrow_right_slider" /></svg>
+  <svg class="icon big"><use xlink:href="#icon-cart" /></svg>
+</div>
+
+<div>
+  <svg class="icon small alert"><use xlink:href="#icon-close" /></svg>
+  <svg class="icon warning"><use xlink:href="#icon-in_progress" /></svg>
+  <svg class="icon big info"><use xlink:href="#icon-phone" /></svg>
+  <svg class="icon big success"><use xlink:href="#icon-favoris" /></svg>
+</div>
+
+<div>
+  <svg class="icon big gray-lighter"><use xlink:href="#icon-close" /></svg>
+  <svg class="icon big gray-light"><use xlink:href="#icon-close" /></svg>
+  <svg class="icon big gray"><use xlink:href="#icon-close" /></svg>
+  <svg class="icon big gray-dark"><use xlink:href="#icon-close" /></svg>
+  <svg class="icon big gray-darker"><use xlink:href="#icon-close" /></svg>
+</div>
+
+<div>
+  <span class="icon-bg close-yellow small"></span>
+  <span class="icon-bg close-black"></span>
+  <span class="icon-bg close-alert big"></span>
+</div>
+```
+*/
