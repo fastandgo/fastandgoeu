@@ -10,10 +10,10 @@ let source = root + 'src/';
 
 module.exports = {
 	to: {
-    root: root,
-    source: source,
+		root: root,
+		source: source,
 		liquid: {
-      source: source + 'templates/',
+			source: source + 'templates/',
 			files: source + 'templates/*.liquid',
 			destination: root
 		},
@@ -30,17 +30,17 @@ module.exports = {
 		},
 		images: {
 			source: source + 'img/',
-			files: source + 'img/**/*.{jpg,jpeg,png,gif}',
+			files: source + 'img/**/*.{jpg,jpeg,png,gif,mp4}',
 			destination: root + 'img/'
 		},
 		svg: {
 			source: source + 'svg/',
 			files: source + 'svg/**/*.svg',
 			destination: root + 'svg/'
-    },
-    styleguide: {
-      source: root,
-      destination: root + 'styleguide/'
-    }
+		},
+		styleguide: {
+			source: root,
+			destination: root + 'styleguide/'
+		}
 	}
 };

@@ -35,7 +35,12 @@ deploy.gh_pages = () => {
       [
         ...deploy.files,
         path.to.root + '.nojekyll',
-        path.to.root + 'CNAME'
+        path.to.root + 'CNAME',
+        path.to.root + '*.png',
+        path.to.root + '*.xml',
+        path.to.root + '*.ico',
+        path.to.root + '*.svg',
+        path.to.root + '*.webmanifest'
       ], {
         base: '.'
       }
