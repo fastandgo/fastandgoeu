@@ -22,7 +22,7 @@ import "./molecules/header.js";
 import "./molecules/hero.js";
 import "./molecules/simulation.js";
 import "./molecules/desc.js";
-// import "./molecules/contact.js";
+import "./molecules/contact.js";
 
 ready(function () {
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit

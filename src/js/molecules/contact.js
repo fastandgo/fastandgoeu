@@ -42,6 +42,13 @@ export default (({
       input.value;
     validate();
   };
+  let resetForm = () => {
+    button.classList.add('disabled');
+    inputs.map(input => {
+      input.value = '';
+      input.checked = false;
+    });
+  }
   inputs.map(input => {
     let eventName = input.type === 'checkbox' ?
       'click' :
@@ -66,6 +73,7 @@ export default (({
           "black"
         );
         $form.appendChild($alert);
+        resetForm();
       }, error => {
         console.log('fail', error);
         let $alert = alertbox.create(
