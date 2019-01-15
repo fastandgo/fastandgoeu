@@ -29,7 +29,7 @@
       <form id="contact-form" class="bg-pattern bg-gray sm-pgh-2 sm-pgv-3 md-pg-4">
         <h3 class="no-margin fz-18 lh-1_2 fw-700 mgb-3">Message</h3>
         <label for="function" class="sm-mgb-2 md-mgb-3">
-          <div>{{contact.form.function}}</div>
+          <div>{{contact.form.function}}*</div>
           <select name="function" id="function" required>
             <option value="Brasseurs/Caviste">Brasseurs/Cavistes</option>
             <option value="Cafés/Hôtels/Restaurants">Cafés/Hôtels/Restaurants</option>
@@ -41,19 +41,19 @@
           </select>
         </label>
         <label for="first_name" class="sm-mgb-2 md-mgb-3">
-          <div>{{contact.form.first_name}}</div>
+          <div>{{contact.form.first_name}}*</div>
           <input type="text" name="first_name" id="first_name" placeholder="Laurent" required>
         </label>
         <label for="last_name" class="sm-mgb-2 md-mgb-3">
-          <div>{{contact.form.last_name}}</div>
+          <div>{{contact.form.last_name}}*</div>
           <input type="text" name="last_name" id="last_name" placeholder="Dupont" required>
         </label>
         <label for="email" class="sm-mgb-2 md-mgb-3">
-          <div>{{contact.form.email}}</div>
+          <div>{{contact.form.email}}*</div>
           <input type="email" name="email" id="email" placeholder="laurent.dupont@mail.com" required>
         </label>
         <label for="phone" class="sm-mgb-2 md-mgb-3">
-          <div>{{contact.form.phone}}</div>
+          <div>{{contact.form.phone}}*</div>
           <input type="phone" name="phone" id="phone" placeholder="06 00 00 00 00" required>
         </label>
         <label for="message" class="sm-mgb-2 md-mgb-3">
@@ -61,7 +61,7 @@
           <textarea name="message" id="message" rows="10"></textarea>
         </label>
         <input type="checkbox" name="checkbox" id="contact_ok">
-        <label for="contact_ok" class="sm-mgb-2 md-mgb-3">{{contact.form.checkbox}}</label>
+        <label for="contact_ok" class="sm-mgb-2 md-mgb-3">{{contact.form.checkbox}}*</label>
         <div class="flex align-end-center size-100p">
           <button class="button black sm-size-100p md-size-auto disabled">{{contact.form.cta}}</button>
         </div>
